@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Page
+    x:Class="NullableFox.AoXiangToDoList.Views.Pages.DebugPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:app="using:NullableFox.AoXiangToDoList"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:NullableFox.AoXiangToDoList.Views.Pages"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    mc:Ignorable="d">
+
+    <Grid>
+        <Border
+            Margin="15"
+            BorderBrush="{ThemeResource SystemBaseLowColor}"
+            BorderThickness="1"
+            CornerRadius="6">
+            <GridView
+                Margin="15"
+                Header="开发者工具"
+                SelectionMode="None">
+                <Button
+                    Grid.RowSpan="2"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Bottom"
+                    Command="{x:Bind app:App.Current.ApplicationViewModel.LocalSaveDataCommand, Mode=OneWay}"
+                    Content="保存系统数据"
+                    Style="{ThemeResource AccentButtonStyle}" />
+            </GridView>
+        </Border>
+
+    </Grid>
+</Page>

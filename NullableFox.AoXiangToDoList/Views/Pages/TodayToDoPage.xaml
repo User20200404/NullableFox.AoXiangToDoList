@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Page
+    x:Class="NullableFox.AoXiangToDoList.Views.Pages.TodayToDoPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:NullableFox.AoXiangToDoList.Views.Pages"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:usercontrols="using:NullableFox.AoXiangToDoList.Views.UserControls"
+    xmlns:vm="using:NullableFox.AoXiangToDoList.ViewModels"
+    Background="Transparent"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <DataTemplate x:Key="TodayToDoItemTemplate" x:DataType="vm:ToDoWorkItemViewModel">
+            <Grid Margin="10" ColumnSpacing="10">
+                <Grid.Resources>
+                    <Style TargetType="TextBlock">
+                        <Setter Property="VerticalAlignment" Value="Center" />
+                    </Style>
+                </Grid.Resources>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <TextBlock
+                    FontSize="15"
+                    FontWeight="SemiBold"
+                    Text="{x:Bind Title, Mode=OneWay}" />
+                <StackPanel Grid.Column="1" Orientation="Horizontal">
+                    <TextBlock Foreground="{StaticResource SystemBaseMediumColor}" Text="{x:Bind Subtitle, Mode=OneWay}" />
+                </StackPanel>
+
+                <usercontrols:TimeCounter
+                    Grid.Column="2"
+                    Margin="20,0,20,0"
+                    EndTime="{x:Bind DeadLine, Mode=OneWay}"
+                    StartTime="{x:Bind StartTime, Mode=OneWay}" />
+                <Button
+                    Grid.Column="3"
+                    Command="{x:Bind NavigateToPomodoroPageCommand, Mode=OneWay}"
+                    Content="去完成"
+                    Style="{ThemeResource AccentButtonStyle}" />
+            </Grid>
+        </DataTemplate>
+    </Page.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Border
+            Height="200"
+            Margin="10"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Top"
+            BorderBrush="{ThemeResource SystemAccentColor}"
+            BorderThickness="1"
+            CornerRadius="6">
+            <Border.Background>
+                <ImageBrush ImageSource="/Assets/Clock_Header.png" Stretch="UniformToFill" />
+            </Border.Background>
+            <Grid>
+                <StackPanel
+                    Margin="10"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Bottom"
+                    Orientation="Horizontal"
+                    Spacing="5">
+                    <StackPanel.Resources>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="FontSize" Value="20" />
+                            <Setter Property="FontWeight" Value="SemiBold" />
+                        </Style>
+                    </StackPanel.Resources>
+                    <TextBlock Text="Hi~ 你今天共有" />
+                    <TextBlock Foreground="{ThemeResource SystemAccentColorLight3}" Text="{x:Bind ToDoCollectionViewModel.TodayToDoWorkItemViewModels.Count, Mode=OneWay}" />
+                    <TextBlock Text="个待办事项哦" />
+                </StackPanel>
+
+            </Grid>
+        </Border>
+        <ListView
+            Grid.Row="1"
+            ItemTemplate="{StaticResource TodayToDoItemTemplate}"
+            ItemsSource="{x:Bind ToDoCollectionViewModel.TodayToDoWorkItemViewModels, Mode=OneWay}" />
+    </Grid>
+</Page>

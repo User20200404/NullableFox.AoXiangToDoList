@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "NullableFox.AoXiangToDoList (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "NullableFox.AoXiangToDoList (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
