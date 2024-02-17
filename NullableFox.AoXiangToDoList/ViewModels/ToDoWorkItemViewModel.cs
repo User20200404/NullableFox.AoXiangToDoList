@@ -55,14 +55,7 @@ namespace NullableFox.AoXiangToDoList.ViewModels
         public int Layer
         {
             get => toDoWorkItem.Layer;
-            set
-            {
-                if (toDoWorkItem.Layer != value)
-                {
-                    toDoWorkItem.Layer = value;
-                    OnPropertyChanged(nameof(Layer));
-                }
-            }
+            set => SetProperty(ref toDoWorkItem.Layer, value);
         }
 
         [JsonInclude]
@@ -71,66 +64,31 @@ namespace NullableFox.AoXiangToDoList.ViewModels
         public int ImportancePriority
         {
             get => toDoWorkItem.ImportancePriority;
-            set
-            {
-                if (toDoWorkItem.ImportancePriority != value)
-                {
-                    toDoWorkItem.ImportancePriority = value;
-                    OnPropertyChanged(nameof(ImportancePriority));
-                }
-            }
+            set => SetProperty(ref toDoWorkItem.ImportancePriority, value);
         }
 
         public int EmergencyPriority
         {
             get => toDoWorkItem.EmergencyPriority;
-            set
-            {
-                if (toDoWorkItem.EmergencyPriority != value)
-                {
-                    toDoWorkItem.EmergencyPriority = value;
-                    OnPropertyChanged(nameof(EmergencyPriority));
-                }
-            }
+            set => SetProperty(ref toDoWorkItem.EmergencyPriority, value);
         }
 
         public string Title
         {
             get => toDoWorkItem.Title;
-            set
-            {
-                if (toDoWorkItem.Title != value)
-                {
-                    toDoWorkItem.Title = value;
-                    OnPropertyChanged(nameof(Title));
-                }
-            }
+            set => SetProperty(ref toDoWorkItem.Title, value);
         }
 
         public string Subtitle
         {
             get => toDoWorkItem.Subtitle;
-            set
-            {
-                if (toDoWorkItem.Subtitle != value)
-                {
-                    toDoWorkItem.Subtitle = value;
-                    OnPropertyChanged(nameof(Subtitle));
-                }
-            }
+            set => SetProperty(ref toDoWorkItem.Subtitle, value);
         }
 
         public string Description
         {
             get => toDoWorkItem.Description;
-            set
-            {
-                if (toDoWorkItem.Description != value)
-                {
-                    toDoWorkItem.Description = value;
-                    OnPropertyChanged(nameof(Description));
-                }
-            }
+            set => SetProperty(ref toDoWorkItem.Description, value);
         }
         [JsonInclude]
         public DateTime CreateTime => toDoWorkItem.CreateTime;
@@ -138,66 +96,31 @@ namespace NullableFox.AoXiangToDoList.ViewModels
         public DateTime StartTime
         {
             get => toDoWorkItem.StartTime;
-            set
-            {
-                if (toDoWorkItem.StartTime != value)
-                {
-                    toDoWorkItem.StartTime = value;
-                    OnPropertyChanged(nameof(StartTime));
-                }
-            }
+            set => SetProperty(ref toDoWorkItem.StartTime, value);
         }
 
         public DateTime DeadLine
         {
             get => toDoWorkItem.DeadLine;
-            set
-            {
-                if (toDoWorkItem.DeadLine != value)
-                {
-                    toDoWorkItem.DeadLine = value;
-                    OnPropertyChanged(nameof(DeadLine));
-                }
-            }
+            set => SetProperty(ref toDoWorkItem.DeadLine, value);
         }
 
         public WorkItemStatus Status
         {
             get => toDoWorkItem.Status;
-            set
-            {
-                if (toDoWorkItem.Status != value)
-                {
-                    toDoWorkItem.Status = value;
-                    OnPropertyChanged(nameof(Status));
-                }
-            }
+            set => SetProperty(ref toDoWorkItem.Status, value);
         }
 
         public ObservableCollection<int> SubToDoWorkItemInnerIdList
         {
             get => toDoWorkItem.SubToDoWorkItemInnerIdList;
-            set
-            {
-                if (toDoWorkItem.SubToDoWorkItemInnerIdList != value)
-                {
-                    toDoWorkItem.SubToDoWorkItemInnerIdList = value;
-                    OnPropertyChanged(nameof(SubToDoWorkItemInnerIdList));
-                }
-            }
+            set => SetProperty(ref toDoWorkItem.SubToDoWorkItemInnerIdList, value);
         }
 
         public ObservableCollection<int> PomodoroRecordInnerIdList
         {
             get => toDoWorkItem.PomodoroRecordInnerIdList;
-            set
-            {
-                if (toDoWorkItem.PomodoroRecordInnerIdList != value)
-                {
-                    toDoWorkItem.PomodoroRecordInnerIdList = value;
-                    OnPropertyChanged(nameof(PomodoroRecordInnerIdList));
-                }
-            }
+            set => SetProperty(ref toDoWorkItem.PomodoroRecordInnerIdList, value);
         }
         #endregion
 

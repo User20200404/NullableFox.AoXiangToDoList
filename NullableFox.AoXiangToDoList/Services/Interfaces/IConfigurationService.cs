@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NullableFox.AoXiangToDoList.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,7 @@ namespace NullableFox.AoXiangToDoList.Services.Interfaces
 {
     internal interface IConfigurationService
     {
-        public bool ShowDebugInformation { get; }
+        public Task SaveAsync(AppConfiguration config);
+        public Task<AppConfiguration> LoadAsync();
     }
 }

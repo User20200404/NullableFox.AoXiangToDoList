@@ -12,19 +12,19 @@ namespace NullableFox.AoXiangToDoList.Models
 {
     internal class ToDoWorkItem
     {
-        public int Layer { get; set; }
-        public int InnerId { get; init; }
-        public int ImportancePriority { get; set; }
-        public int EmergencyPriority { get; set; }
-        public string Title { get; set; }
-        public string Subtitle { get; set; }
-        public string Description {  get; set; }
-        public DateTime CreateTime { get; init; }
-        public DateTime StartTime { get; set; }
-        public DateTime DeadLine { get; set; }
-        public WorkItemStatus Status { get; set; }
-        public ObservableCollection<int> SubToDoWorkItemInnerIdList { get; set; } = new ObservableCollection<int>();
-        public ObservableCollection<int> PomodoroRecordInnerIdList { get; set; } = new ObservableCollection<int>();
+        public int Layer;
+        public int InnerId;
+        public int ImportancePriority;
+        public int EmergencyPriority;   
+        public string Title;
+        public string Subtitle;
+        public string Description;
+        public DateTime CreateTime;
+        public DateTime StartTime;
+        public DateTime DeadLine;
+        public WorkItemStatus Status;
+        public ObservableCollection<int> SubToDoWorkItemInnerIdList = new ObservableCollection<int>();
+        public ObservableCollection<int> PomodoroRecordInnerIdList = new ObservableCollection<int>();
 
         public override bool Equals(object obj)
         {

@@ -12,16 +12,16 @@ namespace NullableFox.AoXiangToDoList.Models
         /// <summary>
         /// 番茄专注的工作时间。
         /// </summary>
-        public int WorkTime { get; set; }
+        public int WorkTime;
         /// <summary>
         /// 番茄专注的休息时间。
         /// </summary>
-        public int RestTime { get; set; }
-        public PomodoroStatus PomodoroStatus { get; set; }
-        public DateTime StartTime { get; set; }
-        public DateTime ExpectedWorkEndTime { get; set; }
-        public DateTime ExpectedRestEndTime { get; set; }
-        public int? BoundToDoWorkInnerId { get; set; }
+        public int RestTime;
+        public PomodoroStatus PomodoroStatus;
+        public DateTime StartTime;
+        public DateTime ExpectedWorkEndTime;
+        public DateTime ExpectedRestEndTime;
+        public int? BoundToDoWorkInnerId;
         public Pomodoro DeepCopy()
         {
             var obj = this.MemberwiseClone() as Pomodoro;

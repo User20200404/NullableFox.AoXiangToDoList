@@ -8,9 +8,9 @@ namespace NullableFox.AoXiangToDoList.Models
 {
     internal class UserInfo
     {
-        public required string UserName { get; set; }
-        public required string Password { get; set; }
-        public required string NewPassword { get; set; }
-        public required string Account { get; set; }
+        public required string UserName;
+        public required string Password;
+        public required string NewPassword;
+        public required string Account;
     }
 }

@@ -8,7 +8,7 @@ namespace NullableFox.AoXiangToDoList.Models
 {
     internal class NotificationContext
     {
-        public string ContextName { get; set; } 
-        public int NotificationQueueMaxLength { get; set; }
+        public string ContextName;
+        public int NotificationQueueMaxLength;
     }
 }

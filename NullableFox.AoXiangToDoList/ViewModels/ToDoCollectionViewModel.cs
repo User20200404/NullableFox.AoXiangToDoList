@@ -184,7 +184,7 @@ namespace NullableFox.AoXiangToDoList.ViewModels
                 foreach (var item in items)
                 {
                     var viewModel = new ToDoWorkItemViewModel(item, toDoWorkService);
-                    AddViewModelAsync(viewModel);
+                    await AddViewModelAsync(viewModel);
                 }
             }
             finally { CanUpdate = true; }

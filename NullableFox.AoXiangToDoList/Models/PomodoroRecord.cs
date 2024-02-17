@@ -8,11 +8,11 @@ namespace NullableFox.AoXiangToDoList.Models
 {
     internal class PomodoroRecord
     {
-        public  int InnerId { get; init; }
-        public DateTime StartTime { get; set; }
-        public DateTime EndTime { get; set; }
+        public int InnerId;
+        public DateTime StartTime;
+        public DateTime EndTime;
         public TimeSpan Duration => EndTime - StartTime;
-        public PomodoroRecordStatus PomodoroRecordStatus { get; set; }
+        public PomodoroRecordStatus PomodoroRecordStatus;
     }
     internal enum PomodoroRecordStatus
     {

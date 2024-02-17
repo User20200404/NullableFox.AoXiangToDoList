@@ -4,6 +4,7 @@ using Microsoft.UI.Xaml;
 using NullableFox.AoXiangToDoList.Services;
 using NullableFox.AoXiangToDoList.Services.Interfaces;
 using NullableFox.AoXiangToDoList.ViewModels;
+using NullableFox.AoXiangToDoList.Views.Windows;
 using System;
 
 // To learn more about WinUI, the WinUI project structure,
@@ -48,6 +49,7 @@ namespace NullableFox.AoXiangToDoList
             services.AddSingleton<IPomodoroRecordService, PomodoroRecordService>();
             services.AddSingleton<IPomodoroService,PomodoroService>();
             services.AddSingleton<IApplicationService, ApplicationService>();
+            services.AddSingleton<IConfigurationService, ConfigurationService>();
             services.AddKeyedSingleton<INavigationService, NavigationService>(NavigationServiceKeys.Root);
             services.AddKeyedSingleton<INavigationService, NavigationService>(NavigationServiceKeys.ToDoWork);
 
@@ -57,6 +59,9 @@ namespace NullableFox.AoXiangToDoList
             services.AddTransient<PomodoroRecordViewModel>();
             services.AddTransient<PomodoroRecordCollectionViewModel>();
             services.AddSingleton<ApplicationViewModel>();
+            services.AddSingleton<AppConfigurationViewModel>();
+            services.AddSingleton<MainWindow>();
+            services.AddSingleton<FocusViewWindow>();
 
             return services.BuildServiceProvider();
         }
@@ -67,7 +72,7 @@ namespace NullableFox.AoXiangToDoList
         /// <param name="args">Details about the launch request and process.</param>
         protected override void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs args)
         {
-            m_window = new MainWindow();
+            m_window = ServiceProvider.GetRequiredService<MainWindow>();
             m_window.Activate();
         }
 

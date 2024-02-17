@@ -98,57 +98,7 @@
                             </SplitView.Pane>
 
                             <Grid FlowDirection="LeftToRight">
-                                <StackPanel
-                                    HorizontalAlignment="Center"
-                                    VerticalAlignment="Center"
-                                    Orientation="Vertical"
-                                    Spacing="20">
-                                    <uc:ProgressPomodoro
-                                        Width="300"
-                                        Height="300"
-                                        Progress="{x:Bind PomodoroViewModel.TotalProgress, Mode=OneWay}" />
-                                    <Border
-                                        Background="{ThemeResource SystemAltLowColor}"
-                                        BorderBrush="{ThemeResource SystemBaseLowColor}"
-                                        BorderThickness="2"
-                                        CornerRadius="6"
-                                        Opacity="{x:Bind PomodoroViewModel.IsActivated, Converter={StaticResource BooleanToOpacityVisibilityConverter}, Mode=OneWay}">
-                                        <Grid>
-                                            <StackPanel
-                                                Margin="3"
-                                                HorizontalAlignment="Center"
-                                                FlowDirection="LeftToRight"
-                                                Orientation="Vertical"
-                                                Spacing="3">
-                                                <TextBlock HorizontalAlignment="Center" Text="距离下一个阶段还有" />
-                                                <TextBlock
-                                                    x:Name="clockTextBlock"
-                                                    FontFamily="Consolas"
-                                                    Style="{StaticResource TitleLargeTextBlockStyle}"
-                                                    Text="{x:Bind GetTimeSpanString(PomodoroViewModel.TimeSpanBeforeNextSection), Mode=OneWay}" />
-                                                <Button
-                                                    Width="120"
-                                                    HorizontalAlignment="Center"
-                                                    Command="{x:Bind PomodoroViewModel.TryRequestStopCommand}"
-                                                    CommandParameter="{x:Bind XamlRoot}"
-                                                    Content="停止专注"
-                                                    IsEnabled="{x:Bind PomodoroViewModel.IsActivated, Mode=OneWay}">
-                                                    <Button.OpacityTransition>
-                                                        <ScalarTransition />
-                                                    </Button.OpacityTransition>
-                                                    <Button.Resources>
-                                                        <ResourceDictionary Source="/Views/Resources/ButtonCriticalResource.xaml" />
-                                                    </Button.Resources>
-                                                </Button>
-                                            </StackPanel>
-                                            <TextBlock
-                                                Margin="5"
-                                                HorizontalAlignment="Right"
-                                                VerticalAlignment="Bottom"
-                                                Text="{x:Bind x:String.Format('阶段{0}/2', PomodoroViewModel.CurrentStage), Mode=OneWay}" />
-                                        </Grid>
-                                    </Border>
-                                </StackPanel>
+                                <uc:PomodoroCounter />
                             </Grid>
                         </SplitView>
                     </Grid>

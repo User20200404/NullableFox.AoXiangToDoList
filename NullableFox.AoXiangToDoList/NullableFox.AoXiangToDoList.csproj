@@ -25,9 +25,11 @@
     <None Remove="Views\Resources\AppBarButtonCriticalResource.xaml" />
     <None Remove="Views\Resources\ButtonCriticalResource.xaml" />
     <None Remove="Views\UserControls\JsonPresenter.xaml" />
+    <None Remove="Views\UserControls\PomodoroCounter.xaml" />
     <None Remove="Views\UserControls\PomodoroOptionSelector.xaml" />
     <None Remove="Views\UserControls\ProgressPomodoro.xaml" />
     <None Remove="Views\UserControls\TimeCounter.xaml" />
+    <None Remove="Views\Windows\FocusViewWindow.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -87,6 +89,16 @@
   <ItemGroup>
     <Folder Include="Views\Dialogs\" />
     <Folder Include="Views\Interfaces\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Views\Windows\FocusViewWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Views\UserControls\PomodoroCounter.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Views\Pages\TodayToDoPage.xaml">
